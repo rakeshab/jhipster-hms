@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="hospitalManagementApp.doctor.detail.title">Doctor</span> {{vm.doctor.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="hospitalManagementApp.doctor.name">Name</span></dt>
+        <dd>
+            <span>{{vm.doctor.name}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.doctor.age">Age</span></dt>
+        <dd>
+            <span>{{vm.doctor.age}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.doctor.qualification">Qualification</span></dt>
+        <dd>
+            <span>{{vm.doctor.qualification}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.doctor.specialization">Specialization</span></dt>
+        <dd>
+            <span>{{vm.doctor.specialization}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.doctor.phonenumber">Phonenumber</span></dt>
+        <dd>
+            <span>{{vm.doctor.phonenumber}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.doctor.email">Email</span></dt>
+        <dd>
+            <span>{{vm.doctor.email}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.doctor.gender">Gender</span></dt>
+        <dd>
+            <span>{{vm.doctor.gender}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.doctor.Organization">Organization</span></dt>
+        <dd>
+            <a ui-sref="organization-detail({id:vm.doctor.organization.id})">{{vm.doctor.organization.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="doctor-detail.edit({id:vm.doctor.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

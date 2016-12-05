@@ -1,0 +1,29 @@
+{
+    "hospitalManagementApp": {
+        "doctor" : {
+            "home": {
+                "title": "Doctors",
+                "createLabel": "Create a new Doctor",
+                "createOrEditLabel": "Create or edit a Doctor",
+                "search": "Search for Doctor"
+            },
+            "created": "A new Doctor is created with identifier {{ param }}",
+            "updated": "A Doctor is updated with identifier {{ param }}",
+            "deleted": "A Doctor is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Doctor {{ id }}?"
+            },
+            "detail": {
+                "title": "Doctor"
+            },
+            "name": "Name",
+            "age": "Age",
+            "qualification": "Qualification",
+            "specialization": "Specialization",
+            "phonenumber": "Phonenumber",
+            "email": "Email",
+            "gender": "Gender",
+            "Organization": "Organization"
+        }
+    }
+}

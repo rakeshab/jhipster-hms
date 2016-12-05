@@ -1,0 +1,72 @@
+<div>
+    <h2 data-translate="hospitalManagementApp.doctor.home.title">Doctors</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="doctor.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="hospitalManagementApp.doctor.home.createLabel">
+                        Create new Doctor
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="hospitalManagementApp.doctor.name">Name</span></th>
+                    <th><span data-translate="hospitalManagementApp.doctor.age">Age</span></th>
+                    <th><span data-translate="hospitalManagementApp.doctor.qualification">Qualification</span></th>
+                    <th><span data-translate="hospitalManagementApp.doctor.specialization">Specialization</span></th>
+                    <th><span data-translate="hospitalManagementApp.doctor.phonenumber">Phonenumber</span></th>
+                    <th><span data-translate="hospitalManagementApp.doctor.email">Email</span></th>
+                    <th><span data-translate="hospitalManagementApp.doctor.gender">Gender</span></th>
+                    <th><span data-translate="hospitalManagementApp.doctor.Organization">Organization</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="doctor in vm.doctors track by doctor.id">
+                    <td><a ui-sref="doctor-detail({id:doctor.id})">{{doctor.id}}</a></td>
+                    <td>{{doctor.name}}</td>
+                    <td>{{doctor.age}}</td>
+                    <td>{{doctor.qualification}}</td>
+                    <td>{{doctor.specialization}}</td>
+                    <td>{{doctor.phonenumber}}</td>
+                    <td>{{doctor.email}}</td>
+                    <td>{{doctor.gender}}</td>
+                    <td>
+                        <a ui-sref="organization-detail({id:doctor.organization.id})">{{doctor.organization.name}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="doctor-detail({id:doctor.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="doctor.edit({id:doctor.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="doctor.delete({id:doctor.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

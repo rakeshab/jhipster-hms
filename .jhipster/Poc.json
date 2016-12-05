@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "name",
+            "otherEntityName": "patient",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "chiefcomplaint",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bp",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "pulse",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "temperature",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "weight",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "drugs",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "docnote",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161205072641",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "poc",
+    "pagination": "pager"
+}

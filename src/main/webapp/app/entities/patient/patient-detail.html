@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="hospitalManagementApp.patient.detail.title">Patient</span> {{vm.patient.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="hospitalManagementApp.patient.name">Name</span></dt>
+        <dd>
+            <span>{{vm.patient.name}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.patient.age">Age</span></dt>
+        <dd>
+            <span>{{vm.patient.age}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.patient.gender">Gender</span></dt>
+        <dd>
+            <span>{{vm.patient.gender}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.patient.phonenumber">Phonenumber</span></dt>
+        <dd>
+            <span>{{vm.patient.phonenumber}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.patient.email">Email</span></dt>
+        <dd>
+            <span>{{vm.patient.email}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.patient.city">City</span></dt>
+        <dd>
+            <span>{{vm.patient.city}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.patient.state">State</span></dt>
+        <dd>
+            <span>{{vm.patient.state}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="patient-detail.edit({id:vm.patient.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="hospitalManagementApp.patient.home.title">Patients</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="patient.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="hospitalManagementApp.patient.home.createLabel">
+                        Create new Patient
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="hospitalManagementApp.patient.name">Name</span></th>
+                    <th><span data-translate="hospitalManagementApp.patient.age">Age</span></th>
+                    <th><span data-translate="hospitalManagementApp.patient.gender">Gender</span></th>
+                    <th><span data-translate="hospitalManagementApp.patient.phonenumber">Phonenumber</span></th>
+                    <th><span data-translate="hospitalManagementApp.patient.email">Email</span></th>
+                    <th><span data-translate="hospitalManagementApp.patient.city">City</span></th>
+                    <th><span data-translate="hospitalManagementApp.patient.state">State</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="patient in vm.patients track by patient.id">
+                    <td><a ui-sref="patient-detail({id:patient.id})">{{patient.id}}</a></td>
+                    <td>{{patient.name}}</td>
+                    <td>{{patient.age}}</td>
+                    <td>{{patient.gender}}</td>
+                    <td>{{patient.phonenumber}}</td>
+                    <td>{{patient.email}}</td>
+                    <td>{{patient.city}}</td>
+                    <td>{{patient.state}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="patient-detail({id:patient.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="patient.edit({id:patient.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="patient.delete({id:patient.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<div>
+    <h2 data-translate="hospitalManagementApp.poc.home.title">Pocs</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="poc.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="hospitalManagementApp.poc.home.createLabel">
+                        Create new Poc
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name.name"><span data-translate="hospitalManagementApp.poc.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="chiefcomplaint"><span data-translate="hospitalManagementApp.poc.chiefcomplaint">Chiefcomplaint</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bp"><span data-translate="hospitalManagementApp.poc.bp">Bp</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pulse"><span data-translate="hospitalManagementApp.poc.pulse">Pulse</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="temperature"><span data-translate="hospitalManagementApp.poc.temperature">Temperature</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="weight"><span data-translate="hospitalManagementApp.poc.weight">Weight</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="drugs"><span data-translate="hospitalManagementApp.poc.drugs">Drugs</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="docnote"><span data-translate="hospitalManagementApp.poc.docnote">Docnote</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="poc in vm.pocs track by poc.id">
+                    <td><a ui-sref="poc-detail({id:poc.id})">{{poc.id}}</a></td>
+                    <td>
+                        <a ui-sref="patient-detail({id:poc.name.id})">{{poc.name.name}}</a>
+                    </td>
+                    <td>{{poc.chiefcomplaint}}</td>
+                    <td>{{poc.bp}}</td>
+                    <td>{{poc.pulse}}</td>
+                    <td>{{poc.temperature}}</td>
+                    <td>{{poc.weight}}</td>
+                    <td>{{poc.drugs}}</td>
+                    <td>{{poc.docnote}}</td>
+                    
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="poc-detail({id:poc.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="poc.edit({id:poc.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="poc.delete({id:poc.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

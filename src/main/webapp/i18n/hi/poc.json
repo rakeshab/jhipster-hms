@@ -1,0 +1,29 @@
+{
+    "hospitalManagementApp": {
+        "poc" : {
+            "home": {
+                "title": "Pocs",
+                "createLabel": "नया Poc बनाएँ",
+                "createOrEditLabel": "Poc बनाएँ या संपादित करें",
+                "search": "Poc खोजें"
+            },
+            "created": "एक नया Poc [identifier: {{ param }}] तैयार है",
+            "updated": "एक Poc [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Poc [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Poc [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Poc"
+            },
+            "chiefcomplaint": "Chiefcomplaint",
+            "bp": "Bp",
+            "pulse": "Pulse",
+            "temperature": "Temperature",
+            "weight": "Weight",
+            "drugs": "Drugs",
+            "docnote": "Docnote",
+            "name": "Name"
+        }
+    }
+}

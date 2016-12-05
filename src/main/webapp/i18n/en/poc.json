@@ -1,0 +1,29 @@
+{
+    "hospitalManagementApp": {
+        "poc" : {
+            "home": {
+                "title": "Pocs",
+                "createLabel": "Create a new Poc",
+                "createOrEditLabel": "Create or edit a Poc",
+                "search": "Search for Poc"
+            },
+            "created": "A new Poc is created with identifier {{ param }}",
+            "updated": "A Poc is updated with identifier {{ param }}",
+            "deleted": "A Poc is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Poc {{ id }}?"
+            },
+            "detail": {
+                "title": "Poc"
+            },
+            "chiefcomplaint": "Chiefcomplaint",
+            "bp": "Bp",
+            "pulse": "Pulse",
+            "temperature": "Temperature",
+            "weight": "Weight",
+            "drugs": "Drugs",
+            "docnote": "Docnote",
+            "name": "Name"
+        }
+    }
+}
